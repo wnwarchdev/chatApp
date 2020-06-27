@@ -1,2 +1,4 @@
 ./client/debug.log
 debug.log
+node_modules/
+yarn-error.log
