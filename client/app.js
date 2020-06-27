@@ -11,6 +11,7 @@ const messageContentInput = document.getElementById('message-content');
 ///SOCKET
 
 const socket = io();
+socket.on('message', ({ author, content }) => addMessage(author, content))
 
 ///GLOBAL VARIABLES
 
@@ -33,15 +34,21 @@ function login(event){
 }
 
 
-function sendMessage(event) {
-    event.preventDefault();
-    if (messageContentInput.value === '' || messageContentInput.value === undefined) {
-      alert('no message');
-    } else {
-      addMessage(userName, messageContentInput.value);
-      messageContentInput.value = '';
-    }
+function sendMessage(e) {
+  e.preventDefault();
+
+  let messageContent = messageContentInput.value;
+
+  if(!messageContent.length) {
+    alert('You have to type something!');
   }
+  else {
+    addMessage(userName, messageContent);
+    socket.emit('message', { author: userName, content: messageContent })
+    messageContentInput.value = '';
+  }
+
+}
 
 
 
