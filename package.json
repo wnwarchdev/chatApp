@@ -8,12 +8,15 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "serv": "nodemon server.js"
   },
   "devDependencies": {
     "webpack": "^4.43.0"
   },
   "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   }
