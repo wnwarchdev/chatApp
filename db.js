@@ -1,5 +1,6 @@
 const db = {
-    messages:['dummy']
+    messages:[],
+    users:[]
 }
 
 module.exports = db;

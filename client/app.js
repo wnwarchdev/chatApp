@@ -31,6 +31,7 @@ function login(event){
         loginForm.classList.remove('show');
         messagesSection.classList.add('show');
     }
+    socket.emit('join', userName);
 }
 
 
