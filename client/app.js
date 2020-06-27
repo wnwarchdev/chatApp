@@ -8,6 +8,10 @@ const userNameInput = document.getElementById('username');
 const messageContentInput = document.getElementById('message-content');
 
 
+///SOCKET
+
+const socket = io();
+
 ///GLOBAL VARIABLES
 
 let userName;

@@ -7,10 +7,9 @@ const app = express();
 
 
 const messages = db.messages;
-
 //console.log(messages)
 
-
+//show app
 app.use(express.static(path.join(__dirname, '/client')));
 
 
